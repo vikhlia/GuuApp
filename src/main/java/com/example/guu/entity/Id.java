@@ -1,10 +1,18 @@
 package com.example.guu.entity;
 
-import lombok.Data;
-
-@Data
 public class Id {
 
     private int id;
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public Id(int id) {
+        this.id = id;
+    }
 }

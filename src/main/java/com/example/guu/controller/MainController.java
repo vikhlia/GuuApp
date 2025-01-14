@@ -25,7 +25,7 @@ public class MainController {
     @GetMapping("/main")
     public String mainPage(Model model){
 
-        int countStudents = utilsService.getStudentCount(studentService.getAllStudents());
+        int countStudents = studentService.getAllStudents().size();
         model.addAttribute("countStudents", countStudents);
 
         return "main-page";
