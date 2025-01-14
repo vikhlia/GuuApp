@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Main page for guu app</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Поиск студента</h1>
+<form th:action="@{/findStudent}" th:object="${student}" method="post">
+    <p>Введите фамилию студента:
+        <input name="surname" th:value="${surname}" required>
+    </p>
+    <p><input type="submit" value="Найти" /></p>
+</form>
+</body>
+</html>

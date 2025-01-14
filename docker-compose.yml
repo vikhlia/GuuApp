@@ -1,0 +1,27 @@
+version: '1'
+services:
+# DB
+  postgres:
+    image: postgres:15.8-alpine
+    container_name: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=guu
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  # APP 
+  expenses_app:
+    container_name:  guu_app
+    build: 
+      context: docker-guu_app
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    image: guu_app
+    restart: unless-stopped
+    depends_on:
+      - postgres
+  

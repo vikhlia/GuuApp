@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Main page for guu app</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Студенты в ГУУ</h1>
+<h4 th:text="'Количество студентов в БД: ' + ${countStudents}"/>
+
+<h2>Добавление нового студента</h2>
+<form th:action="@{/main}" th:object="${student}" method="post">
+    <p>Введите информацию о студенте:</p>
+        <br>
+        <label for="name">Имя</label>
+        <input id="name" name="name" th:value="${name}" required>
+
+        <label for="surname">Фамилия</label>
+        <input id="surname" name="surname" th:value="${surname}" required>
+
+        <label for="course">Курс обучения</label>
+        <input id="course" name="course" th:value="${course}" required>
+    <p><input type="submit" value="Сохранить" /></p>
+    <br>
+    <p>Для поиска студента нажмите <a href="/findStudent">здесь</a></p>
+    <br>
+    <p>Для удаления студента нажмите <a href="/deleteStudent">здесь</a></p>
+    <br>
+    <p>Для вывода списка всех студентов нажмите <a href="/allStudents">здесь</a></p>
+</form>
+</body>
+</html>

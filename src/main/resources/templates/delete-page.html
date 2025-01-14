@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Main page for guu app</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Удаление студента</h1>
+<form th:action="@{/deleteStudent}" th:object="${id}" method="post">
+    <p>Введите id студента:
+        <input name="id" th:value="${id}" required>
+    </p>
+    <p><input type="submit" value="Удалить" /></p>
+</form>
+</body>
+</html>

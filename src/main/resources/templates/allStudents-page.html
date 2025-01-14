@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Main page for guu app</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Поиск студента по id</h1>
+    <fieldset>
+        <p>Список студентов:
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Курс обучения</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="student : ${allStudents}">
+                <td><span th:text="${student.id}"> ID </span></td>
+                <td><span th:text="${student.name}"> Name </span></td>
+                <td><span th:text="${student.surname}"> Surname </span></td>
+                <td><span th:text="${student.course}"> Course </span></td>
+            </tr>
+            </tbody>
+        </table>
+        </p>
+    </fieldset>
+<p>Для перехода на стартовую страницу нажмите <a href="/main">здесь</a></p>
+</body>
+</html>
